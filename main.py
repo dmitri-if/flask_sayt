@@ -337,6 +337,77 @@ def load_p():
                   </html>'''
 
 
+@app.route('/carousel')
+def carousel():
+    return f'''
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{url_for('static', filename='css/style3.css')}" />
+        <title>Пейзажи Марса</title>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      </head>
+      <body class="p-3 m-0 border-0 bd-example m-0 border-0">
+
+        <!-- Example Code -->
+        <h1>Пейзажи Марса</h1>
+            
+        <div id="carouselExample" class="carousel slide">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="{url_for('static', filename=f'img/image.jpg')}" class="d-block w-100 h-30" alt="Не удалось найти картинку">
+            </div>
+            <div class="carousel-item">
+              <img src="{url_for('static', filename=f'img/image2.jpg')}" class="d-block w-100 h-30" alt="Не удалось найти картинку">
+            </div>
+            <div class="carousel-item">
+              <img src="{url_for('static', filename=f'img/image3.jpg')}" class="d-block w-100 h-30" alt="Не удалось найти картинку">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        
+          
+        <!-- End Example Code -->
+      </body>
+    </html>'''
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='127.0.0.1')
+  
+
+# <div id="carouselExample" class="carousel slide">
+#                         <div class="carousel-inner">
+#                           <div class="carousel-item active">
+#                             <img src="{url_for('static', filename='img/images.jpeg')}" class="d-block w-100" alt="здесь должна была быть картинка, но не нашлась">
+#                           </div>
+#                           <div class="carousel-item">
+#                             <img src="{url_for('static', filename='img/images2.jpeg')}" class="d-block w-100" alt="здесь должна была быть картинка, но не нашлась">
+#                           </div>
+#                           <div class="carousel-item">
+#                             <img src="{url_for('static', filename='img/images3.jpeg')}" class="d-block w-100" alt="здесь должна была быть картинка, но не нашлась">
+#                           </div>
+#                         </div>
+#                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+#                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+#                           <span class="visually-hidden">Previous</span>
+#                         </button>
+#                         <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+#                           <span class="carousel-control-next-icon" aria-hidden="true"></span>
+#                           <span class="visually-hidden">Next</span>
+#                         </button>
+#                       </div>          
+#                     </body>
+#                   </html>
