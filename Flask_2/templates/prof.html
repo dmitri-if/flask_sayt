@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content1 %}
+    {% set lst_ns = ['врач', 'ученый'] %}
+    {% set lst_it = ['инженер', 'пилот'] %}
+
+    {% if prof in lst_ns %}
+        <div>
+            <img src="/static/img/ns.png">
+        </div>
+    {% elif prof in lst_it %}
+       <div>
+           <img src="/static/img/riana.jpeg">
+       </div>
+ {% endif %}
+{% endblock %}
